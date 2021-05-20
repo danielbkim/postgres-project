@@ -14,10 +14,7 @@ module.exports = {
 		connection: "postgresql://postgres:D@niel12#@localhost:5432/music_testing",
 		migrations: {
 			directory: "./db/migrations",
-		},
-		seeds: {
-			directory: "./db/seeds/testing",
-		},
+		}
 	},
 	production: {
 		client: "pg",
