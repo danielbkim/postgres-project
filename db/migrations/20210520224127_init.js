@@ -10,11 +10,11 @@ exports.up = function (knex) {
 		})
 		.createTable("genres", (tbl) => {
 			tbl.increments("genre_id");
-			tbl.string("genre_name", 25).notNullable().unique();
+			tbl.string("genre_type", 25).notNullable().unique();
 		})
 		.createTable("songs", (tbl) => {
 			tbl.increments("song_id");
-			tbl.string("song_name", 50).notNullable().unique();
+			tbl.string("song_name").notNullable().unique();
 			tbl
 				.integer("genre_id")
 				.unsigned()

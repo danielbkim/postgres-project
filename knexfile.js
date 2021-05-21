@@ -6,8 +6,13 @@ module.exports = {
 			directory: "./db/migrations",
 		},
 		seeds: {
-			directory: "./db/seeds/dev",
+			directory: "./db/seeds",
 		},
+		pool: {
+			afterCreate: (conn, done) => {
+				conn.run('PRAGMA foreign_keys = ON', done);
+			}
+		}
 	},
 	test: {
 		client: "pg",
@@ -22,5 +27,5 @@ module.exports = {
 		migrations: {
 			directory: "./db/migrations",
 		},
-	},
+	}
 };
